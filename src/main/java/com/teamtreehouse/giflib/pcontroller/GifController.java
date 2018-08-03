@@ -17,8 +17,9 @@ public class GifController {
     }
 
     @RequestMapping("/gif")
-    public String gifDetails(ModelMap){
+    public String gifDetails(ModelMap modelMap){
         Gif gif = new Gif("compiler-bot", LocalDate.of(2015,2,13), "Alex", true);
+        modelMap.put("gif",gif);
         return "gif-details";
     }
 }
